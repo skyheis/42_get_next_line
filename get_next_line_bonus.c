@@ -6,7 +6,7 @@
 /*   By: ggiannit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:45:52 by ggiannit          #+#    #+#             */
-/*   Updated: 2022/11/12 23:08:48 by ggiannit         ###   ########.fr       */
+/*   Updated: 2022/11/12 23:32:43 by ggiannit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,7 +121,7 @@ int	ft_fill_buff_read(int fd, char **buff_read)
 
 char	*get_next_line(int fd)
 {
-	static char *buff_read[4096];
+	static char	*buff_read[4096];
 	char		*line;
 	int			flag_going;
 
