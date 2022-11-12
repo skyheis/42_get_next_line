@@ -6,7 +6,7 @@
 /*   By: ggiannit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 19:11:13 by ggiannit          #+#    #+#             */
-/*   Updated: 2022/11/11 15:24:43 by ggiannit         ###   ########.fr       */
+/*   Updated: 2022/11/12 14:39:41 by ggiannit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	main(void)
 {
-	int	fd;
+	int		fd;
 	char	*nline;
-	int	i;
+	int		i;
 
 	i = 0;
 	fd = open("testfile", O_RDONLY);

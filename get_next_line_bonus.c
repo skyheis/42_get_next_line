@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggiannit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:45:52 by ggiannit          #+#    #+#             */
-/*   Updated: 2022/11/12 15:05:01 by ggiannit         ###   ########.fr       */
+/*   Updated: 2022/11/12 15:09:14 by ggiannit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 void	*ft_adju_buff(char **buff_read)
 {
@@ -121,23 +121,23 @@ int	ft_fill_buff_read(int fd, char **buff_read)
 
 char	*get_next_line(int fd)
 {
-	static char	*buff_read;
+	static char *buff_read[4096];
 	char		*line;
 	int			flag_going;
 
 	if (fd < 0)
 		return (NULL);
-	if (!buff_read || !ft_search_bsn(buff_read))
-		flag_going = ft_fill_buff_read(fd, &buff_read);
-	if (ft_search_bsn(buff_read))
-		line = ft_substr_read(&buff_read);
+	if (!buff_read[fd] || !ft_search_bsn(buff_read[fd]))
+		flag_going = ft_fill_buff_read(fd, &buff_read[fd]);
+	if (ft_search_bsn(buff_read[fd]))
+		line = ft_substr_read(&buff_read[fd]);
 	else if (!flag_going)
 	{
-		line = ft_substr_read(&buff_read);
-		ft_free_null(&buff_read);
+		line = ft_substr_read(&buff_read[fd]);
+		ft_free_null(&buff_read[fd]);
 		return (line);
 	}
 	else if (flag_going == -1)
-		return (ft_free_null(&buff_read));
+		return (ft_free_null(&buff_read[fd]));
 	return (line);
 }
