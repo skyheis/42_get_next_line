@@ -6,7 +6,7 @@
 /*   By: ggiannit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:45:52 by ggiannit          #+#    #+#             */
-/*   Updated: 2022/11/12 15:05:01 by ggiannit         ###   ########.fr       */
+/*   Updated: 2022/11/12 23:08:24 by ggiannit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,6 +125,7 @@ char	*get_next_line(int fd)
 	char		*line;
 	int			flag_going;
 
+	line = NULL;
 	if (fd < 0)
 		return (NULL);
 	if (!buff_read || !ft_search_bsn(buff_read))
